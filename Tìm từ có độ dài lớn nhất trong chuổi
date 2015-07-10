@@ -1,0 +1,45 @@
+#include<string.h>
+#include<conio.h>
+#include<stdio.h>
+int main()
+{
+    int max=1;
+    int dodai;
+    int bt;
+    int kt;
+char S[]="       agssssss cuu Long Tranh Ba  ";
+int Start;
+int End;
+int Lenth=strlen(S);
+for(int i=0;i<Lenth;i++)
+{
+if(S[i]==' '&&S[i+1]!=' ')
+{
+    Start=i+1;
+    for(int j=Start;j<Lenth;j++)
+    {
+            if(S[j]==' ')
+          {
+                End=j-1;
+                i=End;
+                break;
+          }
+    }
+    dodai=End-Start+1;
+    if(max<dodai)
+    {
+    max=dodai;
+    bt=Start;
+    kt=End;
+    }
+}
+}
+printf("%d",max);
+for(int i=bt;i<=kt;i++)
+{
+printf("%c",S[i]);
+}
+getch();
+return 0;
+
+}
